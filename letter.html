@@ -35,7 +35,7 @@
         </div>
 
         <main class="page-container">
-            <section class="letter-layout">
+            <section class="love-letter-section">
                 <svg class="floating-icon star" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" fill="#FFE69A" />
                 </svg>
@@ -43,48 +43,46 @@
                     <path d="M20 17.58A4.42 4.42 0 0115.58 22H7.42A4.42 4.42 0 113 17.58 4.5 4.5 0 017.5 13H8a5 5 0 0110-1.2A3.5 3.5 0 0120 17.58z" fill="#B0E0E6" />
                 </svg>
 
-                <div class="letter-card">
-                    <div class="letter-heading">
+                <div class="love-letter-card">
+                    <header class="card-heading">
                         <p class="eyebrow">From my heart to yours</p>
-                        <h1>A Love Letter 💌</h1>
-                        <p class="subheading">Let me show you how much you mean to me.</p>
+                        <h1>A Love Letter <span aria-hidden="true">💌</span></h1>
+                        <p class="subheading">A tiny surprise wrapped in pastel dreams.</p>
+                    </header>
+
+                    <div class="envelope-stage">
+                        <div class="glow"></div>
+                        <div class="envelope" id="envelope" tabindex="0" role="button" aria-pressed="false" aria-label="Open the special envelope">
+                            <div class="envelope-back"></div>
+                            <div class="envelope-paper">
+                                <div class="paper-inner handwriting">
+                                    <p>My Dearest Princess,</p>
+                                    <p>Every moment with you feels like a page from a dreamy fairytale. Your laughter sprinkles sunshine, your kindness paints the sky, and your heart makes everything brighter.</p>
+                                    <p>Thank you for being the sweetest part of my story.</p>
+                                    <p class="signature">Forever and always,<br> Your Secret Admirer</p>
+                                </div>
+                            </div>
+                            <div class="envelope-front">
+                                <div class="envelope-flap"></div>
+                                <div class="envelope-seal">💌</div>
+                                <div class="envelope-heart heart-one">💕</div>
+                                <div class="envelope-heart heart-two">💖</div>
+                            </div>
+                            <div class="sparkle-dot dot-1">✨</div>
+                            <div class="sparkle-dot dot-2">🌸</div>
+                        </div>
                     </div>
 
-                    <div class="letter-body">
-                        <div class="envelope-wrapper">
-                            <div class="envelope" id="envelope" tabindex="0" role="button" aria-pressed="false" aria-label="Open the special envelope">
-                                <div class="envelope-back"></div>
-                                <div class="envelope-paper">
-                                    <div class="paper-inner handwriting">
-                                        <p>My Dearest Princess,</p>
-                                        <p>Every moment with you feels like a page from a dreamy fairytale. Your laughter sprinkles sunshine, your kindness paints the sky, and your heart makes everything brighter.</p>
-                                        <p>Thank you for being the sweetest part of my story.</p>
-                                        <p class="signature">Forever and always,<br> Your Secret Admirer</p>
-                                    </div>
-                                </div>
-                                <div class="envelope-front">
-                                    <div class="envelope-flap"></div>
-                                    <div class="envelope-seal">💌</div>
-                                    <div class="envelope-heart heart-one">💕</div>
-                                    <div class="envelope-heart heart-two">💖</div>
-                                </div>
-                                <div class="sparkle-dot dot-1">✨</div>
-                                <div class="sparkle-dot dot-2">🌸</div>
-                            </div>
-                            <div class="envelope-caption">
-                                <p>Tap or click to open the envelope</p>
-                                <span class="chip special-chip">Special Delivery 💌</span>
-                            </div>
-                        </div>
+                    <p class="card-caption">Click to open the envelope</p>
+                    <span class="chip special-chip">Special Delivery 💌</span>
 
-                        <div class="letter-message" aria-live="polite">
-                            <p><span class="dropcap">M</span>y heart crafted this note to remind you that you are loved beyond words. You carry a light that calms every storm and inspires every dream.</p>
-                            <p>Whenever life feels heavy, come back to this letter and remember: your smile is magic, your soul is art, and you are cherished every single day.</p>
-                            <p class="closing">With all the sparkles and stardust in the world,<br><span>💖 Your Secret Admirer</span></p>
-                            <div class="letter-actions">
-                                <button type="button" id="replayMagic" class="secondary-button">Replay the sparkles ✨</button>
-                                <a href="index.html" class="back-button">Back to the first note</a>
-                            </div>
+                    <div class="letter-message" aria-live="polite">
+                        <p><span class="dropcap">M</span>y heart crafted this note to remind you that you are loved beyond words. You carry a light that calms every storm and inspires every dream.</p>
+                        <p>Whenever life feels heavy, come back to this letter and remember: your smile is magic, your soul is art, and you are cherished every single day.</p>
+                        <p class="closing">With all the sparkles and stardust in the world,<br><span>💖 Your Secret Admirer</span></p>
+                        <div class="letter-actions">
+                            <button type="button" id="replayMagic" class="secondary-button">Replay the sparkles ✨</button>
+                            <a href="index.html" class="back-button">Back to the first note</a>
                         </div>
                     </div>
                 </div>
