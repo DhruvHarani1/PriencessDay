@@ -71,15 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
     
-    // Heart opening animation
+    // Heart opening animation leading to the letter page
     function openHeart() {
+        if (!heartButton) return;
+
         // Disable button to prevent multiple clicks
         heartButton.disabled = true;
-        
+
         // Add loading state
         const originalText = heartButton.innerHTML;
         heartButton.innerHTML = 'Opening... <span class="heart">💝</span>';
-        
+
         // Create heart container for animation
         const heartContainer = document.createElement('div');
         heartContainer.className = 'heart-container';
@@ -94,113 +96,27 @@ document.addEventListener('DOMContentLoaded', () => {
             pointer-events: none;
             animation: heartBeat 1s ease-out forwards;
         `;
-        
-        // Add to body
+
         document.body.appendChild(heartContainer);
-        
+
         // Trigger confetti after a short delay
         setTimeout(() => {
             triggerConfetti();
-            
-            // Create message overlay
-            const message = document.createElement('div');
-            message.className = 'message-overlay';
-            message.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.9);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 999;
-                opacity: 0;
-                animation: fadeIn 0.5s ease-out forwards;
-                backdrop-filter: blur(5px);
-            `;
-            
-            message.innerHTML = `
-                <div class="message-content" style="
-                    background: white;
-                    padding: 30px;
-                    border-radius: 16px;
-                    max-width: 90%;
-                    max-height: 90vh;
-                    overflow-y: auto;
-                    text-align: center;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                    border: 1px solid rgba(255, 182, 193, 0.5);
-                ">
-                    <h2 style="
-                        color: #ff69b4;
-                        margin-bottom: 20px;
-                        font-size: 28px;
-                    ">You're My Princess! 👑</h2>
-                    <div style="
-                        margin-bottom: 25px;
-                        line-height: 1.6;
-                        color: #4a3a40;
-                    ">
-                        <p style="margin-bottom: 15px;">On this special day, I want you to know how much you mean to me. You light up my world with your smile and bring joy to everyone around you.</p>
-                        <p style="margin-bottom: 15px;">You deserve all the love and happiness in the world, today and always.</p>
-                        <p style="margin: 25px 0;">With all my love,</p>
-                        <p style="font-weight: 600; color: #ff69b4;">Your Secret Admirer</p>
-                    </div>
-                    <button class="close-button" style="
-                        background: linear-gradient(45deg, #ff69b4, #ff8ab3);
-                        color: white;
-                        border: none;
-                        padding: 12px 30px;
-                        font-size: 16px;
-                        font-weight: 600;
-                        border-radius: 50px;
-                        cursor: pointer;
-                        margin-top: 10px;
-                        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-                        transition: all 0.3s ease;
-                    ">Close ❤️</button>
-                </div>
-            `;
-            
-            // Add message to body
-            document.body.appendChild(message);
-            
-            // Add close button event
-            const closeButton = message.querySelector('.close-button');
-            closeButton.addEventListener('click', () => {
-                // Fade out message and heart
-                message.style.animation = 'fadeOut 0.5s forwards';
-                heartContainer.style.animation = 'fadeOut 0.5s forwards';
-                
-                // Remove elements after animation
-                setTimeout(() => {
-                    message.remove();
-                    heartContainer.remove();
-                    heartButton.disabled = false;
-                    heartButton.innerHTML = originalText;
-                }, 500);
-            });
-            
-            // Add keydown event to close with Escape key
-            const handleKeyDown = (e) => {
-                if (e.key === 'Escape') {
-                    closeButton.click();
-                }
-            };
-            
-            document.addEventListener('keydown', handleKeyDown);
-            
-            // Clean up event listener when message is closed
-            message.addEventListener('animationend', function handler() {
-                if (message.style.animationName === 'fadeOut') {
-                    document.removeEventListener('keydown', handleKeyDown);
-                    message.removeEventListener('animationend', handler);
-                }
-            });
-            
-        }, 1000);
+        }, 600);
+
+        // Navigate to the love letter page once the animation finishes
+        setTimeout(() => {
+            window.location.href = 'letter.html';
+        }, 1800);
+
+        // Fallback cleanup in case navigation is interrupted
+        setTimeout(() => {
+            if (document.body.contains(heartContainer)) {
+                heartContainer.remove();
+                heartButton.disabled = false;
+                heartButton.innerHTML = originalText;
+            }
+        }, 4000);
     }
     
     // Add click event to heart button
