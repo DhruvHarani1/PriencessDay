@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const floatingParticles = document.querySelector('.floating-particles');
     const envelope = document.getElementById('envelope');
-    const letterMessage = document.querySelector('.letter-message');
+    const letterPanel = document.querySelector('.letter-panel');
     const replayButton = document.getElementById('replayMagic');
+    const continueButton = document.getElementById('continueButton');
 
     function createParticles() {
         if (!floatingParticles) return;
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         envelope.setAttribute('aria-pressed', 'true');
 
         setTimeout(() => {
-            letterMessage?.classList.add('revealed');
+            letterPanel?.classList.add('revealed');
         }, 450);
 
         if (playConfetti) {
@@ -80,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!envelope) return;
         envelope.classList.remove('open');
         envelope.setAttribute('aria-pressed', 'false');
-        letterMessage?.classList.remove('revealed');
+        letterPanel?.classList.remove('revealed');
         // Trigger reflow so animations replay
         void envelope.offsetWidth;
-        void letterMessage?.offsetWidth;
+        void letterPanel?.offsetWidth;
         isAnimating = false;
     }
 
@@ -103,6 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     replayButton?.addEventListener('click', () => {
         resetEnvelope();
         setTimeout(() => openEnvelope(true), 300);
+    });
+
+    continueButton?.addEventListener('click', () => {
+        continueButton.classList.add('cta-pressed');
+        triggerConfettiBurst();
+        setTimeout(() => continueButton.classList.remove('cta-pressed'), 600);
     });
 
     // Automatically create ambience
