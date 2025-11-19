@@ -1,71 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specially For You!!!</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trisha's Cute World 🌸</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="app">
-        <div class="dreamy-bg"></div>
-        <div class="floating-particles" aria-hidden="true"></div>
-        <div class="grid-overlay" aria-hidden="true"></div>
-        
-        <div class="bg-icons" aria-hidden="true">
-            <svg class="icon icon-star icon-1" viewBox="0 0 24 24" fill="#FFF7A1">
-                <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z"></path>
-            </svg>
-            <svg class="icon icon-cloud icon-2" viewBox="0 0 24 24" fill="#B0E0E6">
-                <path d="M18.5 12c1.38 0 2.5 1.12 2.5 2.5S19.88 17 18.5 17H6.5C4.57 17 3 15.43 3 13.5S4.57 10 6.5 10c.28 0 .5-.22.5-.5C7 6.36 9.36 4 12.5 4S18 6.36 18 9.5c0 .28.22.5.5.5z"></path>
-            </svg>
-            <svg class="icon icon-sparkle icon-3" viewBox="0 0 24 24" fill="#FFD1DC">
-                <path d="M12 2l1.5 3.5L17 7l-3.5 1L12 12l-1.5-4L7 7l3.5-1L12 2z"></path>
-            </svg>
-            <div class="heart-1">💕</div>
-            <div class="heart-2">💖</div>
-            <div class="sparkle-text-1">✨</div>
-        </div>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="kawaii-bg"></div>
+    <div class="floating-shapes"></div>
 
-        <div class="page-container">
-            <div class="font-display">
-                <div class="note-card">
-                    <div class="note-header">
-                        <div class="traffic-lights">
-                            <span class="light red"></span>
-                            <span class="light yellow"></span>
-                            <span class="light green"></span>
-                        </div>
-                        <p class="note-title">A Note for You <span class="heart">❤️</span></p>
-                        <div class="hello-kitty">
-                            <img src="https://cute-website-new-demo.vercel.app/assets/intro-DzUiguR4.gif" alt="Hello Kitty" class="hello-kitty-img">
-                        </div>
-                    </div>
-                    
-                    <div class="note-content">
-                        <h1>Hey Princess! <span class="heart">💕</span></h1>
-                        <p>I Wanted to do something special for you, for this princess day, so I made something special just for you...</p>
-                        <p class="highlight">Click below to see what it is! <span class="sparkle">✨</span></p>
-                        <div class="cat-image">
-                            <img src="https://cute-website-new-demo.vercel.app/assets/intro-BrJOTFFc.png" alt="Cute cat with flowers" class="cat-img">
-                        </div>
-                        <button class="heart-button" id="heartButton">
-                            Open My Heart <span class="heart">💖</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="footer">
-                    Made with love, only for you <span class="heart">💕</span>
-                </div>
+    <!-- 1. Landing Page -->
+    <section id="landing" class="full-screen">
+      <div class="hero-content">
+        <h1 class="animate-pop">Hi Trisha 👋</h1>
+        <p class="hero-text">Welcome Trisha 😊<br>This site tastes like burgers, coffee, and cute chaos.</p>
+        <div class="floating-icons">
+          <span class="float-icon burger">🍔</span>
+          <span class="float-icon icecream">🍦</span>
+          <span class="float-icon chibi">👧</span>
+          <span class="float-icon sparkle">✨</span>
+          <span class="float-icon emoji">😊</span>
+        </div>
+        <button id="enter-world-btn" class="cute-btn">Enter your cute world →</button>
+      </div>
+    </section>
+
+    <main id="main-world" class="hidden">
+      
+      <!-- 2. Fav Flavours Zone -->
+      <section id="flavours" class="section-block">
+        <h2 class="section-title">Your Favourite Flavours Zone 😋</h2>
+        <div class="food-carousel">
+          <div class="food-card" data-type="burger">
+            <div class="food-icon bounce">🍔</div>
+            <h3>Burger</h3>
+            <p>99% of problems can be solved with burgers. The remaining 1%? More burgers.</p>
+          </div>
+          <div class="food-card" data-type="icecream">
+            <div class="food-icon melt">🍦</div>
+            <h3>Ice Cream</h3>
+            <p>Mood instantly better. No debate.</p>
+          </div>
+          <div class="food-card" data-type="coffee">
+            <div class="food-icon steam">☕</div>
+            <h3>Coffee</h3>
+            <p>Coffee = personality power-up.</p>
+          </div>
+          <div class="food-card" data-type="fruits">
+            <div class="food-icon float">🍓</div>
+            <h3>Fruits</h3>
+            <p>Healthy choice queen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Photo Mode Activated -->
+      <section id="photos" class="section-block">
+        <h2 class="section-title">Photo Mode Activated 📸</h2>
+        <div class="polaroid-gallery">
+          <div class="polaroid" data-msg="If taking cute photos was a sport, you’d be world champion.">
+            <div class="frame"><span class="emoji-img">🤳</span></div>
+            <p>Selfie Mode</p>
+          </div>
+          <div class="polaroid" data-msg="Aesthetic level: 1000%">
+            <div class="frame"><span class="emoji-img">✨</span></div>
+            <p>Aesthetics</p>
+          </div>
+          <div class="polaroid" data-msg="Capturing memories... and looking good doing it.">
+            <div class="frame"><span class="emoji-img">🎞️</span></div>
+            <p>Memories</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Reel Energy Panel -->
+      <section id="reels" class="section-block">
+        <h2 class="section-title">Reel Energy Panel 🎬</h2>
+        <div class="reel-container">
+          <div class="reel-item">
+            <div class="reel-content">
+              <p>First time seeing Trisha vs 999999th time</p>
+              <div class="reaction">😍 vs 😍</div>
             </div>
+          </div>
+          <div class="reel-item">
+            <div class="reel-content">
+              <p>Dhruv's commitment issue but not with replying to Trisha</p>
+              <div class="reaction">✅ Seen 0.01s ago</div>
+            </div>
+          </div>
+          <div class="reel-item">
+            <div class="reel-content">
+              <p>What’s so special in me?</p>
+              <div class="reaction">Your eyes 🙈✨</div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
-</body>
+      <!-- 5. Eyes Appreciation Department -->
+      <section id="eyes" class="section-block">
+        <h2 class="section-title">The Eyes Appreciation Department 👀</h2>
+        <div class="anime-office">
+          <div class="tabs-header">
+            <button class="office-tab active" data-tab="shine">Shine Level</button>
+            <button class="office-tab" data-tab="effect">Effect</button>
+            <button class="office-tab" data-tab="reason">Reason</button>
+          </div>
+          <div class="tab-content active" id="shine">
+            <div class="meter-box">
+              <label>Brightness: 100/100</label>
+              <div class="meter-bar"><div class="fill" style="width: 100%"></div></div>
+            </div>
+            <p>Certified impossible to ignore.</p>
+          </div>
+          <div class="tab-content" id="effect">
+            <div class="sparkle-zone">✨ ✨ ✨</div>
+            <p>Your eyes = built-in special effects.</p>
+          </div>
+          <div class="tab-content" id="reason">
+            <button id="ask-manufacturer-btn">Ask Manufacturer</button>
+            <p id="manufacturer-msg" class="hidden">They used premium parts. 😌</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Shopping Simulator -->
+      <section id="shopping" class="section-block">
+        <h2 class="section-title">Shopping Simulator 🛍️</h2>
+        <div class="game-container" id="game-area">
+          <div id="player-avatar">👧</div>
+          <div id="score-board">Score: 0</div>
+          <div id="start-screen">
+            <p>Catch the cute items!</p>
+            <button id="start-game-btn">Start Shopping</button>
+          </div>
+          <div id="win-screen" class="hidden">
+            <h3>Shopping Queen Detected 🤭</h3>
+            <p>Reward: Unlimited cute vibes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Emoji Interaction Wall -->
+      <section id="emojis" class="section-block">
+        <h2 class="section-title">Emoji Interaction Wall 😄</h2>
+        <div class="emoji-grid">
+          <button class="emoji-btn" data-emoji="😊">😊</button>
+          <button class="emoji-btn" data-emoji="🤗">🤗</button>
+          <button class="emoji-btn" data-emoji="🤭">🤭</button>
+          <button class="emoji-btn" data-emoji="🙈">🙈</button>
+        </div>
+        <p class="emoji-caption">Your emojis have more personality than most people.</p>
+      </section>
+
+      <!-- 8. ha hoo Portal -->
+      <div id="ha-hoo-trigger" class="hidden-trigger"></div>
+      <div id="ha-hoo-modal" class="hidden">
+        <div class="modal-card">
+          <h2>ha hoo unlocked 💗</h2>
+          <p>This is your secret passphrase.</p>
+          <button id="close-hahoo">🤫</button>
+        </div>
+      </div>
+
+      <!-- 9. Personal Note -->
+      <section id="note" class="section-block">
+        <div class="note-paper">
+          <p id="typing-note"></p>
+        </div>
+      </section>
+
+      <!-- 10. Ending Screen -->
+      <section id="ending" class="section-block">
+        <div class="chibi-wave">👋</div>
+        <h2>Stay Cute, Trisha 💗</h2>
+        <button id="replay-btn" class="cute-btn">Come Back Anytime 😊</button>
+      </section>
+
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
